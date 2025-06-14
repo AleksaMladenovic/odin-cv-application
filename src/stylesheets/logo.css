@@ -1,0 +1,19 @@
+div.logo{
+    display: flex;
+    color:#1c274c;
+    align-items: center;
+    width:80vw;
+    transform-origin: left;
+    transition: transform 0.2s ease-in-out;
+
+    h2,svg{
+        cursor: pointer;
+    }
+    svg{
+        height: 50px;
+    }
+
+}
+div.logo.hovered{
+    transform: scale(1.1);
+}

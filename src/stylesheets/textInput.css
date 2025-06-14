@@ -1,0 +1,26 @@
+.textInput{
+    display: grid;
+    margin-top: 16px;
+    position: relative;
+    label{
+        position: absolute;
+        grid-column: 1;
+        grid-row: 1;
+        
+        z-index: 2;
+        transform-origin: left;
+        transition: transform 0.3s ease-in-out;
+        padding-left: 4px;
+    }
+    div.editable,input{
+        grid-column: 1;
+        grid-row: 1;
+        border: none;
+        border-bottom: 1px solid black;
+        outline: none;
+    }
+    label.move{
+        transform:translateY(-14px)  scale(0.8) ;
+    }
+    
+}
