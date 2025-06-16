@@ -7,6 +7,8 @@ import WorkExperience from "./WorkExperience";
 import Education from "./Education";
 import Skills from "./Skills";
 import '../stylesheets/building.css'
+import PreviousSVG from "./SVGs/PreviousSVG";
+import NextSVG from "./SVGs/NextSVG";
 
 export default function Building() {
     const [sectionIndex, setSectionIndex] = useState(0);
@@ -34,22 +36,22 @@ export default function Building() {
 
             <div className="prevNextBtns">
                 <button
-                    className="previousBtn"
+                    className={"previousBtn svgBtn noRotate"}
                     disabled={!hasPrevious}
                     onClick={() =>
                         hasPrevious ? setSectionIndex(sectionIndex - 1) : null
                     }
                 >
-                    Previous
+                    <PreviousSVG/>
                 </button>
                 <button
-                    className="nextBtn"
+                    className="nextBtn svgBtn noRotate"
                     disabled={!hasNext}
                     onClick={() =>
                         hasNext ? setSectionIndex(sectionIndex + 1) : null
                     }
                 >
-                    Next
+                    <NextSVG/>
                 </button>
             </div>
         </div>
