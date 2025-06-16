@@ -1,6 +1,7 @@
 import { CVInformation } from "../data/CVInformation.jsx";
 import { useEffect, useRef, useState } from "react";
 import TextInput from "./TextInput.jsx";
+import CustomForm from "./CustomForm.jsx";
 
 export default function ProfessionalSummary() {
     const [role, setRole] = useState(CVInformation.professionalSummary.role);
@@ -19,8 +20,7 @@ export default function ProfessionalSummary() {
     },[]);
 
     return (
-        <section className="form professionalSummary">
-            <h1>Professional Summary</h1>
+        <CustomForm id="professionalSummary" name='Professional Summary'>
             <TextInput
                 type="text"
                 id="role"
@@ -51,6 +51,6 @@ export default function ProfessionalSummary() {
                 >
                 </div>
             </div>
-        </section>
+        </CustomForm>
     );
 }

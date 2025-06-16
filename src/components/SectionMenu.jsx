@@ -1,10 +1,23 @@
 import { cvSections } from "../data/sections";
 import "../stylesheets/sectionMenu.css";
+import CloseSVG from "./SVGs/CloseSVG";
 
-export default function SectionMenu({ selectedIndex, onChangeLi }) {
+export default function SectionMenu({
+    selectedIndex,
+    onChangeLi,
+    onClosingMenu,
+}) {
     return (
         <nav className="sectionMenu">
-            <h2>Section Menu</h2>
+            <h2>
+                Section Menu{" "}
+                <button
+                    onClick={() => onClosingMenu()}
+                    className="svgBtn noRotate"
+                >
+                    <CloseSVG />
+                </button>
+            </h2>
             <ul>
                 {cvSections.map((section, index) => {
                     return (
@@ -16,7 +29,7 @@ export default function SectionMenu({ selectedIndex, onChangeLi }) {
                             onClick={() => onChangeLi(index)}
                         >
                             {section}
-                            {index === selectedIndex && <SvgArrow /> }
+                            {index === selectedIndex && <SvgArrow />}
                         </li>
                     );
                 })}

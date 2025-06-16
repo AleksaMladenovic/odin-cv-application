@@ -5,6 +5,7 @@ import "../stylesheets/skills.css";
 import PlusSVG from "./SVGs/PlusSVG";
 import CancelSVG from "./SVGs/CancelSVG";
 import DeleteSVG from "./SVGs/DeleteSVG";
+import CustomForm from "./CustomForm";
 
 export default function Skills() {
     const [openedSkillsForm, setOpenedSkillsForm] = useState(false);
@@ -28,8 +29,7 @@ export default function Skills() {
         setSkills(newSkills);
     }
     return (
-        <section className="form skills">
-            <h1>Skills</h1>
+        <CustomForm id="skills" name='Skills'>
             <ul className="skillsList">
                 {skills.map((skill, index) => {
                     return (
@@ -55,7 +55,7 @@ export default function Skills() {
                     + Add Skill
                 </button>
             )}
-        </section>
+        </CustomForm>
     );
 }
 

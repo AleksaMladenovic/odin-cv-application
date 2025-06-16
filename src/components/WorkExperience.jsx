@@ -10,6 +10,7 @@ import LocationSVG from "./SVGs/LocationSVG.jsx";
 import DateSVG from "./SVGs/DateSVG.jsx";
 import formatDate from "../functions/formatDate.jsx";
 import CheckMarkSVG from "./SVGs/CheckmarkSVG.jsx";
+import CustomForm from "./CustomForm.jsx";
 
 export default function WorkExperience() {
     //true - for new work experience
@@ -47,8 +48,7 @@ export default function WorkExperience() {
         setWorkExperienceList(newWorkExperienceList);
     }
     return (
-        <section className="form workExperience">
-            <h1>Work Experience</h1>
+        <CustomForm id="workExperience" name="Work Experience">
             <ul className="workExperienceList">
                 {workExperienceList.map((workExperience, index) => {
                     return (
@@ -88,7 +88,7 @@ export default function WorkExperience() {
                     }
                 />
             )}
-        </section>
+        </CustomForm>
     );
 }
 
@@ -238,10 +238,14 @@ function AddExperience({
                             if (validateAll())
                                 addExperienceFunction(newWorkExperience);
                         }}
-                        className={experienceForChange !== ""? 'svgBtn noRotate' : 'svgBtn'}
+                        className={
+                            experienceForChange !== ""
+                                ? "svgBtn noRotate"
+                                : "svgBtn"
+                        }
                     >
                         {experienceForChange === "" && <PlusSVG />}
-                        {experienceForChange !== "" && <CheckMarkSVG/>}
+                        {experienceForChange !== "" && <CheckMarkSVG />}
                     </button>
                     <button
                         type="button"
@@ -386,20 +390,23 @@ function DisplayWorkExperience({
             </div>
             <p className="organization">{workExperience.organization}</p>
             <div className="tenure">
-                <DateSVG/>
+                <DateSVG />
                 {workExperience.tenure === "completed" ? (
                     <p>
-                        {formatDate(workExperience.fromTenure)} - {formatDate(workExperience.toTenure)}
+                        {formatDate(workExperience.fromTenure)} -{" "}
+                        {formatDate(workExperience.toTenure)}
                     </p>
                 ) : (
                     <p>{formatDate(workExperience.fromTenure)} - Present</p>
                 )}
             </div>
             <div className="location">
-                <LocationSVG/>
-                {workExperience.employmentType==='onsite'?
-                <p>{workExperience.location}</p>:
-                <p>Remote</p>}
+                <LocationSVG />
+                {workExperience.employmentType === "onsite" ? (
+                    <p>{workExperience.location}</p>
+                ) : (
+                    <p>Remote</p>
+                )}
             </div>
             <ul className="accomplishmentsList">
                 {workExperience.accomplishments.map((accomplishment) => {

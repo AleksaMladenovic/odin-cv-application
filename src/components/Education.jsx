@@ -10,6 +10,7 @@ import EditSVG from "./SVGs/EditSVG";
 import formatDate from "../functions/formatDate";
 import DateSVG from "./SVGs/DateSVG";
 import LocationSVG from "./SVGs/LocationSVG";
+import CustomForm from "./CustomForm";
 
 export default function Education() {
     const [openedEducationForm, setOpenedEducationForm] = useState(false);
@@ -41,10 +42,9 @@ export default function Education() {
         setOpenedEducationForm(false);
     }
     return (
-        <section className="form education">
-            <h1>Education </h1>
+        <CustomForm name='Education' id='education'>
             <ul className="educationList">
-                {educationList.map((education, index) => {
+                 {educationList.map((education, index) => {
                     return (
                         <EducationLi education={education}>
                             <div className="buttons">
@@ -91,7 +91,7 @@ export default function Education() {
                     educationForChange={educationList[openedEducationForm]}
                 ></EducationForm>
             )}
-        </section>
+        </CustomForm>
     );
 }
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CVInformation } from "../data/CVInformation";
 import TextInput from "./TextInput";
+import CustomForm from "./CustomForm";
 export default function PersonalInformation() {
     const [firstName, setFirstName] = useState(
         CVInformation.personalInformation.firstName
@@ -24,8 +25,7 @@ export default function PersonalInformation() {
         address,
     };
     return (
-        <section className="form personalInformation">
-            <h1>Personal Information</h1>
+        <CustomForm name="Personal Information" id="personalInformation">
             <TextInput
                 type="text"
                 id="firstName"
@@ -33,7 +33,9 @@ export default function PersonalInformation() {
                     setFirstName(event.target.value);
                 }}
                 value={firstName}
-            >First Name</TextInput>
+            >
+                First Name
+            </TextInput>
 
             <TextInput
                 type="text"
@@ -42,7 +44,9 @@ export default function PersonalInformation() {
                     setLastName(event.target.value);
                 }}
                 value={lastName}
-            >Last Name</TextInput>
+            >
+                Last Name
+            </TextInput>
 
             <TextInput
                 type="tel"
@@ -53,7 +57,9 @@ export default function PersonalInformation() {
                     setPhoneNumber(onlyNums);
                 }}
                 value={phoneNumber}
-            >Phone Number</TextInput>
+            >
+                Phone Number
+            </TextInput>
 
             <TextInput
                 type="email"
@@ -62,7 +68,9 @@ export default function PersonalInformation() {
                     setEmail(event.target.value);
                 }}
                 value={email}
-            >Email</TextInput>
+            >
+                Email
+            </TextInput>
 
             <TextInput
                 type="text"
@@ -71,7 +79,9 @@ export default function PersonalInformation() {
                     setAddress(event.target.value);
                 }}
                 value={address}
-            >Address</TextInput>
-        </section>
+            >
+                Address
+            </TextInput>
+        </CustomForm>
     );
 }
