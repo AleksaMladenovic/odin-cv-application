@@ -1,4 +1,4 @@
-import { use, useState } from "react";
+import { useState } from "react";
 import { cvSections } from "../data/sections";
 import SectionMenu from "./SectionMenu";
 import PersonalInformation from "./PersonalInformation";

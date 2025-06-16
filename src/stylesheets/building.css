@@ -15,6 +15,9 @@
     }
     .sectionMenu {
         grid-row: span 2;
+        button.closeSection{
+            display: none;
+        }
     }
     h1 {
         text-align: center;
@@ -24,6 +27,10 @@
         transform: translateY(-30px);
         width: 100%;
         max-width: 500px;
+
+        h1>button{
+            display: none;
+        }
     }
 }
 
@@ -33,38 +40,63 @@
         grid-template-columns: auto;
         grid-template-rows: auto auto;
         .sectionMenu {
+            margin-top: 12px;
             grid-row: 1/2;
             grid-column: 1/2;
             z-index: 2;
             background-color: white;
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: tranform 0.5s ease-in-out;
+            button.closeSection {
+                display: inline-block;
+                position: relative;
+                top: 4px;
+            }
+
+            transform: scaleX(0) scaleY(0);
+            transform-origin:top left;
+            transition: transform 0.5s ease-in-out;
         }
         .form {
             transform: translateY(0px);
 
             grid-row: 1/2;
             grid-column: 1/2;
+            h1 {
+                width: 100%;
+                position: relative;
+                left: -12px;
+                button {
+                    display: block;
+                    position: relative;
+                    top: 7px;
+                    left: 6px;
+                    float: left;
+                }
+            }
         }
         .prevNextBtns {
             grid-row: 2/3;
             grid-column: 1/2;
         }
+
+        .form,
+        .prevNextBtns {
+            opacity: 1;
+            pointer-events: auto; /* da omogućiš klikove */
+            transition: opacity 0.3s ease-in-out;
+            transition-delay: 0.5s;
+        }
     }
 
-    .building.openedSection{
-        /* button for opening sectionMenu */
-        .form>h1>button{
-            display: none;
-        }
-
-        .sectionMenu{
+    .building.openedSection {
+        .sectionMenu {
             transform: scale(1);
         }
 
-        .form{
+        .prevNextBtns, .form {
             opacity: 0;
+            pointer-events: none; /* blokira klikove kada je nevidljiv */
+            transition: opacity;
+            transition-delay: 0s;
         }
     }
 }

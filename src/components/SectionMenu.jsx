@@ -13,7 +13,7 @@ export default function SectionMenu({
                 Section Menu{" "}
                 <button
                     onClick={() => onClosingMenu()}
-                    className="svgBtn noRotate"
+                    className="svgBtn noRotate closeSection"
                 >
                     <CloseSVG />
                 </button>
