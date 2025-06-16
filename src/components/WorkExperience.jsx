@@ -12,7 +12,7 @@ import formatDate from "../functions/formatDate.jsx";
 import CheckMarkSVG from "./SVGs/CheckmarkSVG.jsx";
 import CustomForm from "./CustomForm.jsx";
 
-export default function WorkExperience() {
+export default function WorkExperience({onOpeningMenu}) {
     //true - for new work experience
     //false - if closed
     //number - if editing exiting workExperience
@@ -48,7 +48,7 @@ export default function WorkExperience() {
         setWorkExperienceList(newWorkExperienceList);
     }
     return (
-        <CustomForm id="workExperience" name="Work Experience">
+        <CustomForm id="workExperience" name="Work Experience" onOpeningMenu={onOpeningMenu}>
             <ul className="workExperienceList">
                 {workExperienceList.map((workExperience, index) => {
                     return (

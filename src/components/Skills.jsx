@@ -7,7 +7,7 @@ import CancelSVG from "./SVGs/CancelSVG";
 import DeleteSVG from "./SVGs/DeleteSVG";
 import CustomForm from "./CustomForm";
 
-export default function Skills() {
+export default function Skills({onOpeningMenu}) {
     const [openedSkillsForm, setOpenedSkillsForm] = useState(false);
     const [skills, setSkills] = useState(CVInformation.skills);
 
@@ -29,7 +29,7 @@ export default function Skills() {
         setSkills(newSkills);
     }
     return (
-        <CustomForm id="skills" name='Skills'>
+        <CustomForm id="skills" name='Skills' onOpeningMenu={onOpeningMenu}>
             <ul className="skillsList">
                 {skills.map((skill, index) => {
                     return (

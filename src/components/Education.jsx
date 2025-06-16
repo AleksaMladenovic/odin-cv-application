@@ -12,7 +12,7 @@ import DateSVG from "./SVGs/DateSVG";
 import LocationSVG from "./SVGs/LocationSVG";
 import CustomForm from "./CustomForm";
 
-export default function Education() {
+export default function Education({onOpeningMenu}) {
     const [openedEducationForm, setOpenedEducationForm] = useState(false);
     const [educationList, setEducationList] = useState(CVInformation.education);
 
@@ -42,7 +42,7 @@ export default function Education() {
         setOpenedEducationForm(false);
     }
     return (
-        <CustomForm name='Education' id='education'>
+        <CustomForm name='Education' id='education' onOpeningMenu={onOpeningMenu}>
             <ul className="educationList">
                  {educationList.map((education, index) => {
                     return (

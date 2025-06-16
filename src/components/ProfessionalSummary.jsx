@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import TextInput from "./TextInput.jsx";
 import CustomForm from "./CustomForm.jsx";
 
-export default function ProfessionalSummary() {
+export default function ProfessionalSummary({onOpeningMenu}) {
     const [role, setRole] = useState(CVInformation.professionalSummary.role);
     const [summary, setSummary] = useState(
         CVInformation.professionalSummary.summary
@@ -20,7 +20,7 @@ export default function ProfessionalSummary() {
     },[]);
 
     return (
-        <CustomForm id="professionalSummary" name='Professional Summary'>
+        <CustomForm id="professionalSummary" name='Professional Summary' onOpeningMenu={onOpeningMenu}> 
             <TextInput
                 type="text"
                 id="role"

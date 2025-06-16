@@ -2,7 +2,7 @@ import { useState } from "react";
 import { CVInformation } from "../data/CVInformation";
 import TextInput from "./TextInput";
 import CustomForm from "./CustomForm";
-export default function PersonalInformation() {
+export default function PersonalInformation({onOpeningMenu}) {
     const [firstName, setFirstName] = useState(
         CVInformation.personalInformation.firstName
     );
@@ -25,7 +25,7 @@ export default function PersonalInformation() {
         address,
     };
     return (
-        <CustomForm name="Personal Information" id="personalInformation">
+        <CustomForm name="Personal Information" id="personalInformation" onOpeningMenu={onOpeningMenu}>
             <TextInput
                 type="text"
                 id="firstName"
