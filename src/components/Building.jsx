@@ -24,13 +24,18 @@ export default function Building() {
     function closeSectionMenu() {
         setOpenedSectionMenu(false);
     }
+
+    function onChangeSection(index){
+        setSectionIndex(index);
+        closeSectionMenu();
+    }
     return (
         <div
             className={"building" + (openedSectionMenu ? " openedSection" : "")}
         >
             <SectionMenu
                 selectedIndex={sectionIndex}
-                onChangeLi={setSectionIndex}
+                onChangeLi={onChangeSection}
                 onClosingMenu={closeSectionMenu}
             />
 
