@@ -8,7 +8,7 @@ export default function Homepage({buildResumeFunction}) {
             <button onClick={buildResumeFunction}>Build Your Resume</button>
         </div>
         <div className="imgWrapper">
-            <img src="./src/imgs/cv-example.jpeg"></img>
+            <img src="/imgs/cv-example.jpeg"></img>
         </div>
     </div>);
 }
