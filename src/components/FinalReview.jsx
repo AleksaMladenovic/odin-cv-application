@@ -6,6 +6,7 @@ import Location1SVG from "./SVGs/PDF/Location1SVG";
 import "../stylesheets/finalPreview.css";
 import Date1SVG from "./SVGs/PDF/Date1SVG";
 import formatDate from "../functions/formatDate";
+import PDFDownloadButton from "./PDFDownloadButton";
 
 export default function FinalReview({ onOpeningMenu }) {
     console.log(CVInformation);
@@ -15,6 +16,7 @@ export default function FinalReview({ onOpeningMenu }) {
             name="Final Review"
             id="finalReview"
         >
+            <PDFDownloadButton></PDFDownloadButton>
             <CVDiv></CVDiv>
         </CustomForm>
     );

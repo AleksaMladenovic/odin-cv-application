@@ -21,7 +21,7 @@ export const CVInformation = {
         "lastName": "Mladenović",
         "phoneNumber": "+381621788341",
         "email": "aleksa.mladenoviccc03@gmail.com",
-        "address": "Borislava Nikolića Serjože 19, Nis"
+        "address": "Borislava Nikolica Serjože 19, Nis"
     },
     professionalSummary: {
         "role": "Software Developer",
