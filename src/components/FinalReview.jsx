@@ -9,7 +9,6 @@ import formatDate from "../functions/formatDate";
 import PDFDownloadButton from "./PDFDownloadButton";
 
 export default function FinalReview({ onOpeningMenu }) {
-    console.log(CVInformation);
     return (
         <CustomForm
             onOpeningMenu={onOpeningMenu}

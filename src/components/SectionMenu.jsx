@@ -1,4 +1,5 @@
 import { cvSections } from "../data/sections";
+import loadExample from "../functions/loadExample";
 import "../stylesheets/sectionMenu.css";
 import CloseSVG from "./SVGs/CloseSVG";
 
@@ -6,6 +7,7 @@ export default function SectionMenu({
     selectedIndex,
     onChangeLi,
     onClosingMenu,
+    onLoadExample
 }) {
     return (
         <nav className="sectionMenu">
@@ -34,6 +36,11 @@ export default function SectionMenu({
                     );
                 })}
             </ul>
+
+            <button className="loadExample" onClick={()=>{
+                onLoadExample();
+                loadExample();
+                }}>Load Example</button>
         </nav>
     );
 }

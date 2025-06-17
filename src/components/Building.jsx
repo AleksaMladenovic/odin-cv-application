@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { cvSections } from "../data/sections";
 import SectionMenu from "./SectionMenu";
 import PersonalInformation from "./PersonalInformation";
@@ -13,6 +13,7 @@ import FinalReview from "./FinalReview";
 
 export default function Building() {
     const [sectionIndex, setSectionIndex] = useState(0);
+    const [oldIndex, setOldIndex] = useState(-1);
 
     const hasNext = sectionIndex !== cvSections.length - 1;
     const hasPrevious = sectionIndex !== 0;
@@ -30,6 +31,11 @@ export default function Building() {
         setSectionIndex(index);
         closeSectionMenu();
     }
+
+    function refreshPage(){
+        setOldIndex(sectionIndex);
+        setSectionIndex(cvSections.length);
+    }
     return (
         <div
             className={"building" + (openedSectionMenu ? " openedSection" : "")}
@@ -38,6 +44,7 @@ export default function Building() {
                 selectedIndex={sectionIndex}
                 onChangeLi={onChangeSection}
                 onClosingMenu={closeSectionMenu}
+                onLoadExample={refreshPage}
             />
 
             {cvSections[sectionIndex] === "Personal Information" && (
@@ -58,6 +65,10 @@ export default function Building() {
             {cvSections[sectionIndex] === "Final Review" && (
                 <FinalReview onOpeningMenu={openSectionMenu} />
             )}
+            {sectionIndex===cvSections.length &&(
+                <LoadingPage oldIndex={oldIndex} setIndex={setSectionIndex}></LoadingPage>
+            )
+            }
 
             <div className="prevNextBtns">
                 <button
@@ -81,4 +92,12 @@ export default function Building() {
             </div>
         </div>
     );
+}
+function LoadingPage({oldIndex, setIndex}){
+    useEffect(()=>{
+        setTimeout(()=>{
+            setIndex(oldIndex);
+        },0)
+    })
+    return <div>Loaoding....</div>
 }
