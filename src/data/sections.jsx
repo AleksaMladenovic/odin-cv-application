@@ -4,4 +4,5 @@ export const cvSections = [
     "Work Experience",
     "Education",
     "Skills",
+    "Final Review",
 ];

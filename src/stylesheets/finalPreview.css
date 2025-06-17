@@ -1,0 +1,77 @@
+.finalPreview {
+    .name {
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .role {
+        font-size: 20px;
+        color: blue;
+        margin-top: -10px;
+        margin-bottom: -5px;
+    }
+    .otherInfos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        row-gap: 3px;
+        margin-top: 5px;
+    }
+    .info {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 2px 5px;
+        border-radius: 10px;
+    }
+    svg {
+        width: 14px;
+        height: 14px;
+        color: blue;
+    }
+    .title {
+        font-size: 20px;
+        font-weight: bold;
+        border-bottom: 3px solid black;
+        line-height: 22px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+
+    .skills {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+        row-gap: 5px;
+    }
+
+    .skill {
+        border-bottom: 1px solid gray;
+        font-weight: bold;
+    }
+
+    .topBorder {
+        border-top: 1px dashed gray;
+        margin-top: 15px;
+    }
+    .sectionTitle {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .sectionAfterTitle {
+        color: blue;
+        font-size: 16px;
+        margin-top: -5px;
+    }
+
+    .otherInfosSmaller {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        row-gap: 3px;
+        margin-top: -3px;
+    }
+    .list {
+        padding-left: 20px;
+    }
+}

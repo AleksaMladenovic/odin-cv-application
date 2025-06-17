@@ -9,6 +9,7 @@ import Skills from "./Skills";
 import "../stylesheets/building.css";
 import PreviousSVG from "./SVGs/PreviousSVG";
 import NextSVG from "./SVGs/NextSVG";
+import FinalReview from "./FinalReview";
 
 export default function Building() {
     const [sectionIndex, setSectionIndex] = useState(0);
@@ -53,6 +54,9 @@ export default function Building() {
             )}
             {cvSections[sectionIndex] === "Skills" && (
                 <Skills onOpeningMenu={openSectionMenu} />
+            )}
+            {cvSections[sectionIndex] === "Final Review" && (
+                <FinalReview onOpeningMenu={openSectionMenu} />
             )}
 
             <div className="prevNextBtns">
